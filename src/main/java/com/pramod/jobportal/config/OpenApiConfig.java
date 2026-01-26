@@ -1,20 +1,27 @@
 package com.pramod.jobportal.config;
 
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Info;
-import org.springframework.context.annotation.Bean;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@OpenAPIDefinition(
+        info = @Info(
+                title = "Job Portal API",
+                version = "1.0",
+                description = "Job Portal Backend APIs with JWT Security"
+        ),
+        security = @SecurityRequirement(name = "bearerAuth")
+)
+@SecurityScheme(
+        name = "bearerAuth",
+        type = SecuritySchemeType.HTTP,
+        scheme = "bearer",
+        bearerFormat = "JWT"
+)
 public class OpenApiConfig {
-
-    @Bean
-    public OpenAPI jobPortalOpenAPI() {
-        return new OpenAPI()
-                .info(new Info()
-                        .title("Job Portal API")
-                        .description("Job Portal Backend APIs with JWT Security")
-                        .version("1.0.0"));
-    }
 }
 
