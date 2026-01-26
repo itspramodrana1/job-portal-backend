@@ -135,3 +135,16 @@ email: user@gmail.com
 password: user123
 
 Note: This is a backend-only project. Swagger UI is used to test APIs after running the application locally.
+
+
+## API DOcumentation (Swagger)
+
+![Swagger UI 1](screenshots/Screenshot%202026-01-26%20173655.png)
+
+![Swagger UI 2](screenshots/Screenshot%202026-01-26%20173722.png)
+
+![Swagger UI 3](screenshots/Screenshot%202026-01-26%20173738.png)
+
+![Swagger UI 4](screenshots/Screenshot%202026-01-26%20173813.png)
+
+
