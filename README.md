@@ -3,9 +3,8 @@
 A secure Job Portal backend built using Spring Boot with JWT-based authentication and role-based authorization.
 This project provides REST APIs for user authentication, job posting, job searching, and role-based access using JWT Security.
 
-# Job Portal Backend Application
 
- ### Features
+🚀  Features
 - User Authentication (Signup & Login)
 - JWT-based Security
 - Role-based Authorization (ADMIN, RECRUITER, JOB_SEEKER)
@@ -16,7 +15,8 @@ This project provides REST APIs for user authentication, job posting, job search
 - Swagger API Documentation
 - MySQL Database Integration
 
-##  Tech Stack
+
+🛠️ Tech Stack
 - Java 17
 - Spring Boot
 - Spring Security + JWT(JSON WEB Token)
@@ -25,13 +25,14 @@ This project provides REST APIs for user authentication, job posting, job search
 - Swagger (OpenAPI)
 - Meaven
 
-## Project Structure
+
+📂 Project Structure
 src/main/java/com/pramod/jobportal
-│
 ├── controller        # REST Controllers
 ├── service           # Business Logic
 ├── repository        # JPA Repositories
 ├── model             # Entity Classes
+├──Enum               # Enum Constant
 ├── dto               # Request/Response DTOs
 ├── security          # JWT & Security Config
 ├── exception         # Global Exception Handling
@@ -47,7 +48,7 @@ src/main/java/com/pramod/jobportal
 5. Access is granted based on user role
 
 
-### Roles & Permissions
+👥 Roles & Permissions
 
 ### Admin
 - Full access to all APIs
@@ -63,10 +64,28 @@ src/main/java/com/pramod/jobportal
 - Apply for jobs
 
 
-##  API Documentation
-Swagger UI: http://localhost:8080/swagger-ui/index.html
+📘 API Documentation
+Swagger UI : http://localhost:8080/swagger-ui/index.html   
 
-## Configuration
+
+▶️ How to Run the Project
+Follow the steps below to run this project locally.
+
+1️⃣ Clone the Repository
+clone  https://github.com/itspramodrana1/job-portal-backend.git
+cd job-portal-backend
+
+2️⃣ Configure MySQL Database
+Make sure MySQL is running on your system.
+
+Create the database:
+CREATE DATABASE job_portal_db;
+
+3️⃣ Update application.properties
+Go to:
+src/main/resources/application.properties
+
+Update the database configuration:
 spring.datasource.url=jdbc:mysql://localhost:3306/job_portal_db
 spring.datasource.username=root
 spring.datasource.password=root
@@ -74,7 +93,45 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 server.port=8080
 
-##  Run the Project
-1. Configure MySQL in application.properties
-2. Run the application
-3. Test APIs using Swagger or Postman
+4️⃣ Run the Spring Boot Application
+Option 1: IntelliJ IDEA
+
+Open the project in IntelliJ
+
+Run JobPortalBackendApplication.java
+
+5️⃣ Open Swagger UI
+Once the application starts successfully, open your browser and visit:
+http://localhost:8080/swagger-ui/index.html
+
+
+🔐 Authentication (JWT)
+Some APIs are secured using JWT Authentication.
+
+Steps to Access Secured APIs
+1. Call the login API:
+
+POST /auth/login
+
+2. Copy the JWT token from the response
+
+3. Open Swagger UI and click Authorize
+
+4. Paste the token in this format:
+   Bearer <your_token>
+
+5. Click Authorize and close the popup
+
+You can now access secured APIs.
+
+
+🔑 Sample Credentials (For Testing)
+Admin User
+email: admin@gmail.com
+password: admin123
+
+Normal User
+email: user@gmail.com
+password: user123
+
+Note: This is a backend-only project. Swagger UI is used to test APIs after running the application locally.
