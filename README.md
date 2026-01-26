@@ -100,7 +100,7 @@ Open the project in IntelliJ
 
 Run JobPortalBackendApplication.java
 
-5️⃣ Open Swagger UI
+5️⃣ Open Swagger UI : 
 Once the application starts successfully, open your browser and visit:
 http://localhost:8080/swagger-ui/index.html
 
